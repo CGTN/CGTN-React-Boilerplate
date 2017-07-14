@@ -8,7 +8,7 @@ npm run dev
 npm run prod
 ```
 
-2. 多个 HTML 文件可能由单个 ejs 产出，配置文件里需要提供 _entry(每个入口文件的名字) 参数：
+2. 📃多个 HTML 文件可能由单个 ejs 产出，配置文件里需要提供 _entry(每个入口文件的名字) 参数：
 ```javascript
 ...
 entry: {
