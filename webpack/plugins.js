@@ -1,0 +1,79 @@
+/**
+ * Author: Mr.B
+ * Date: 2017/7/7-18:14
+ * Last Modified by: Nokey
+ */
+'use strict';
+
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const htmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
+
+        /**
+         * CommonChunksPlugin will now extract all the common modules from vendor and node_modules
+         */
+        ,new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            filename: 'bundle/[name].js',
+            minChunks: function (module) {
+                var isNpmPlugin = module.context && module.context.indexOf('node_modules') !== -1;
+                var isVendorPlugin = module.context && module.context.indexOf('vendor') !== -1;
+                return isNpmPlugin || isVendorPlugin;
+            }
+        })
+
+        ,new webpack.optimize.CommonsChunkPlugin({
+            name: 'manifest' //But since there are no more common modules between them we end up with just the runtime code included in the manifest file
+        })
+
+        // Extract css file for every entry files
+        ,new ExtractTextPlugin('bundle/[name].css')
+
+        // Generate HTML file to 'output' folder
+        ,new htmlWebpackPlugin({
+            inject: false,
+            title: 'BRICS',
+            filename: 'index.html',
+            template: path.resolve(__dirname, '../src/htmlTemplates/app.ejs'),
+            absURL: '',
+            _entry: 'home.index'
+        })
+        ,new htmlWebpackPlugin({
+            inject: false,
+            title: 'BRICS',
+            filename: 'about/index.html',
+            template: path.resolve(__dirname, '../src/htmlTemplates/app.ejs'),
+            absURL: '',
+            _entry: 'about.index'
+        })
+
+        // Automatically loaded modules when identifier is used as free variable in a module
+        ,new webpack.ProvidePlugin({
+            React: 'react',
+            ReactDOM: 'react-dom',
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery',
+            'toastr': 'bootstrap-toastr',
+            'CodeMirror': 'jquery.codemirror',
+            'Config': 'Config',
+            '_': 'lodash',
+            'PropTypes': 'prop-types'
+            //'window.UMEDITOR_HOME_URL': '/public/vendor/umeditor'
+            //'jwplayer': 'jwplayer',
+            //'IScroll': 'IScroll',
+            //'moment': 'moment'
+            // 'createjs': 'createjs'
+        })
+    ]
+}
