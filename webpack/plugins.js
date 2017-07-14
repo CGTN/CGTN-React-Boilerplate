@@ -41,7 +41,7 @@ module.exports = {
         // Generate HTML file to 'output' folder, each of html need a plugin
         ,new htmlWebpackPlugin({
             inject: false,
-            title: 'BRICS',
+            title: 'Title',
             filename: 'index.html',
             template: path.resolve(__dirname, '../src/htmlTemplates/app.ejs'),
             absURL: '',
@@ -49,7 +49,7 @@ module.exports = {
         })
         ,new htmlWebpackPlugin({
             inject: false,
-            title: 'BRICS',
+            title: 'Title',
             filename: 'about/index.html',
             template: path.resolve(__dirname, '../src/htmlTemplates/app.ejs'),
             _entry: 'about.index'
