@@ -33,8 +33,8 @@
   <!-- End Share Twitter -->
 
   <!-- Icon -->
-  <link rel="shortcut icon" href="<%= htmlWebpackPlugin.options.absURL %>/favicon.png" type="image/x-icon">
-  <link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.options.absURL %>/favicon.png">
+  <link rel="shortcut icon" href="<%= webpackConfig.output.publicPath %>/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="<%= webpackConfig.output.publicPath %>/favicon.png">
 
   <!-- CSS -->
   <% for (var css in htmlWebpackPlugin.files.css) { %>

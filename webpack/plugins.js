@@ -38,7 +38,7 @@ module.exports = {
         // Extract css file for every entry files
         ,new ExtractTextPlugin('bundle/[name].css')
 
-        // Generate HTML file to 'output' folder
+        // Generate HTML file to 'output' folder, each of html need a plugin
         ,new htmlWebpackPlugin({
             inject: false,
             title: 'BRICS',
@@ -52,7 +52,6 @@ module.exports = {
             title: 'BRICS',
             filename: 'about/index.html',
             template: path.resolve(__dirname, '../src/htmlTemplates/app.ejs'),
-            absURL: '',
             _entry: 'about.index'
         })
 
@@ -64,16 +63,9 @@ module.exports = {
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             'window.$': 'jquery',
-            'toastr': 'bootstrap-toastr',
-            'CodeMirror': 'jquery.codemirror',
             'Config': 'Config',
             '_': 'lodash',
             'PropTypes': 'prop-types'
-            //'window.UMEDITOR_HOME_URL': '/public/vendor/umeditor'
-            //'jwplayer': 'jwplayer',
-            //'IScroll': 'IScroll',
-            //'moment': 'moment'
-            // 'createjs': 'createjs'
         })
     ]
 }

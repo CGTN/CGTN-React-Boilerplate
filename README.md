@@ -20,7 +20,6 @@ new htmlWebpackPlugin({
     title: 'Title',
     filename: 'index.html',
     template: path.resolve(__dirname, '../src/htmlTemplates/app.ejs'),
-    absURL: '',
     _entry: 'home.index'
 })
 ```
