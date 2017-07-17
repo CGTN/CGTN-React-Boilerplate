@@ -2,7 +2,7 @@
  * @Author: Nokey
  * @Date: 2017-02-24 14:16:31
  * @Last Modified by: Nokey
- * @Last Modified time: 2017-07-13 17:37:09
+ * @Last Modified time: 2017-07-17 13:59:11
  */
 'use strict';
 
@@ -17,6 +17,11 @@ const LOADERS = require('./webpack/loaders').loaders;
 const PLUGINS = require('./webpack/plugins').plugins;
 const RESOLVE = require('./webpack/resolve');
 
+/**
+ * Config
+ */
+const PUBLIC_PATH = '/brics';
+
 module.exports = {
     // dectool should be false if env is production!!!
     devtool: false, // false || 'cheap-eval-source-map'
@@ -26,7 +31,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, "build"),
         filename: "bundle/[name].js",
-        publicPath: '/brics'
+        publicPath: PUBLIC_PATH
     },
 
     module: {
