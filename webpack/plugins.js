@@ -7,8 +7,9 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const copyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     plugins: [
@@ -67,5 +68,13 @@ module.exports = {
             '_': 'lodash',
             'PropTypes': 'prop-types'
         })
+
+        // Copy static files to 'config.output' folder
+        ,new copyWebpackPlugin([
+            {
+                from: 'favicon.png',
+                to: 'favicon.png'
+            }
+        ])
     ]
 }
