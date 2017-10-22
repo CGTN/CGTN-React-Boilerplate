@@ -42,15 +42,14 @@ module.exports = {
         // Generate HTML file to 'output' folder, each of html need a plugin
         ,new htmlWebpackPlugin({
             inject: false,
-            title: 'Title',
+            title: 'China Minmetals Corporation',
             filename: 'index.html',
             template: path.resolve(__dirname, '../src/htmlTemplates/app.ejs'),
-            absURL: '',
             _entry: 'home.index'
         })
         ,new htmlWebpackPlugin({
             inject: false,
-            title: 'Title',
+            title: 'China Minmetals Corporation',
             filename: 'about/index.html',
             template: path.resolve(__dirname, '../src/htmlTemplates/app.ejs'),
             _entry: 'about.index'
@@ -64,17 +63,16 @@ module.exports = {
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             'window.$': 'jquery',
-            'Config': 'Config',
             '_': 'lodash',
             'PropTypes': 'prop-types'
         })
 
         // Copy static files to 'config.output' folder
-        ,new copyWebpackPlugin([
-            {
-                from: 'favicon.png',
-                to: 'favicon.png'
-            }
-        ])
+        // ,new copyWebpackPlugin([
+        //     {
+        //         from: 'src/images',
+        //         to: 'images'
+        //     }
+        // ])
     ]
 }

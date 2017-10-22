@@ -15,7 +15,7 @@ module.exports = {
             /*exclude: /umeditor/,*/
             include: [
                 path.resolve(__dirname, '../src/pages'),
-                path.resolve(__dirname, '../src/resources/modules')
+                path.resolve(__dirname, '../src/modules')
             ],
             loader: 'babel-loader',
             query: {
@@ -53,24 +53,6 @@ module.exports = {
                 fallback: 'style-loader',
                 use: 'css-loader!stylus-loader'
             })
-        },
-
-        {
-            test: /\.less$/,
-            use: ExtractTextPlugin.extract({
-                fallback: 'style-loader',
-                use: 'css-loader!less-loader'
-            })
-        },
-
-        {
-            test: /\.(gif|png|jpg)\??.*$/,
-            use: 'url-loader?limit=1024&name=/images/[hash].[ext]',
-        },
-
-        {
-            test: /\.(woff|woff2|svg|eot|ttf)\??.*$/,
-            use: 'url-loader?limit=1024&name=/fonts/[name].[ext]'
         }
     ]
 }

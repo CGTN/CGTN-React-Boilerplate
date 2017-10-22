@@ -2,7 +2,7 @@
  * @Author: Nokey
  * @Date: 2017-02-24 14:16:31
  * @Last Modified by: Nokey
- * @Last Modified time: 2017-07-17 13:59:13
+ * @Last Modified time: 2017-09-02 20:45:03
  */
 'use strict';
 
@@ -20,8 +20,8 @@ const RESOLVE = require('./webpack/resolve');
 /**
  * Config
  */
-const PORT = 8888;
-const PUBLIC_PATH = '/brics';
+const PORT = 9000;
+const PUBLIC_PATH = '/wk';
 
 /**
  * Dev plugins
@@ -47,7 +47,33 @@ module.exports = {
     },
 
     module: {
-        loaders: LOADERS
+        loaders: LOADERS.concat([
+            {
+                test: /\.(gif|png|jpg)\??.*$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options:{
+                            limit: 1024,
+                            name: 'images/[hash].[ext]'
+                        }
+                    }
+                ]
+            },
+    
+            {
+                test: /\.(woff|woff2|svg|eot|ttf)\??.*$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options:{
+                            limit: 1024,
+                            name: 'fonts/[name].[ext]'
+                        }
+                    }
+                ]
+            }
+        ])
     },
 
     plugins: PLUGINS.concat([
