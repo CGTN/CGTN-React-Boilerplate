@@ -20,7 +20,7 @@ const RESOLVE = require('./webpack/resolve');
 /**
  * Config
  */
-const PUBLIC_PATH = '/wk';
+const PUBLIC_PATH = '/home';
 
 module.exports = {
     // dectool should be false if env is production!!!

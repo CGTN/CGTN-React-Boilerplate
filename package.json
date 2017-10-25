@@ -1,9 +1,15 @@
 {
   "name": "web-react-template",
-  "version": "0.0.1",
+  "version": "1.1.0",
   "description": "",
   "dependencies": {
+    "fullpage.js": "^2.9.4",
+    "gsap": "^1.20.3",
     "jquery": "^3.2.1",
+    "jquery.html5loader": "^1.8.0",
+    "lazysizes": "^4.0.1-beta1",
+    "lodash": "^4.17.4",
+    "nib": "^1.1.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
@@ -18,13 +24,20 @@
     "html-webpack-plugin": "^2.29.0",
     "open-browser-webpack-plugin": "0.0.5",
     "webpack": "^3.2.0",
-    "webpack-dev-server": "^2.5.1"
+    "webpack-dev-server": "^2.5.1",
+    "style-loader": "^0.18.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "url-loader": "^0.5.9",
+    "file-loader": "^0.11.2",
+    "css-loader": "^0.28.4",
+    "expose-loader": "^0.7.3"
   },
   "scripts": {
     "start": "webpack-dev-server --env=dev --inline --progress",
-    "dev": "webpack --env=dev --watch --progress --colors --display-error-details",
-    "prod": "webpack --env=prod --progress --colors --display-error-details",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --env=dev --inline --progress",
+    "build": "rm -rf build/* && webpack --env=prod --progress --colors --display-error-details"
   },
   "keywords": [
     "react",

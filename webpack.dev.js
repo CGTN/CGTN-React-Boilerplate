@@ -20,8 +20,8 @@ const RESOLVE = require('./webpack/resolve');
 /**
  * Config
  */
-const PORT = 9000;
-const PUBLIC_PATH = '/wk';
+const PORT = 8989;
+const PUBLIC_PATH = '/home';
 
 /**
  * Dev plugins
