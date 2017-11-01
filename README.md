@@ -1,11 +1,5 @@
 # React 多页应用模版
 
-### Update 23 Oct, 2017:
-1. `U:` 更改图片引用方式为模块引用，不再使用copy插件；
-2. `A:` 添加*Roboto-Thin*作为基础字体（个人觉得比较好看）；
-3. `A:` 添加*Utils*功能函数模块；
-4. `A:` 添加*preload*功能组件；
-
 ## DOC:
 
 > 所有打包后的文件都在 build/ 目录下，可以直接将 build/ 部署到线上环境
@@ -49,4 +43,17 @@ new htmlWebpackPlugin({
    7. [**stylus**](http://stylus-lang.com/): TJ大神出品的css预编译语言，底层node；
    
    8. [**nib**](http://tj.github.io/nib/): 配合stylus的css3扩展函数；
+
+
+### Update 1 Nov, 2017:
+
+1. `A:` 添加 Fullpage 配置代码；
+2. `A:` 添加响应式媒体查询阀值；
+
+### Update 23 Oct, 2017:
+
+1. `U:` 更改图片引用方式为模块引用，不再使用copy插件；
+2. `A:` 添加*Roboto-Thin*作为基础字体（个人觉得比较好看）；
+3. `A:` 添加*Utils*功能函数模块；
+4. `A:` 添加*preload*功能组件；
 
