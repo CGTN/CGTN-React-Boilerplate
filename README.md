@@ -5,9 +5,14 @@
 > 所有打包后的文件都在 build/ 目录下，可以直接将 build/ 部署到线上环境
 
 ### 一、 📦 打包方式分为生产和线上：
-```bash
+```javascript
 npm run dev
 npm run prod
+```
+```javascript
+// 打包环境
+node -v
+v6.10.3
 ```
 
 ### 二、 📃 多个 HTML 文件可能由单个 ejs 产出，配置文件里需要提供 _entry(每个入口文件的名字) 参数：
