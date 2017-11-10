@@ -7,7 +7,7 @@
 ### 一、 📦 打包方式分为生产和线上：
 ```javascript
 npm run dev
-npm run prod
+npm run build
 ```
 ```javascript
 // 打包环境
