@@ -11,7 +11,7 @@ const path = require('path'),
 module.exports = {
     alias: {
         /**
-         * JWplayer Plugins( PS: some plugins may be installed by npm, please check package.json!!! )
+         * Plugins( PS: some plugins may be installed by npm, please check package.json!!! )
          */
         'split-text': path.resolve(vendor_path, 'SplitText.min.js')
         ,'jquery-loader': path.resolve(vendor_path, 'jquery.html5Loader.min.js')

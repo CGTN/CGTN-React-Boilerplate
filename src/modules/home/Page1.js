@@ -6,9 +6,11 @@
  */
 'use strict'; 
 
+// Plugins
 import { TimelineLite } from 'gsap'
 import SplitText from 'split-text'
 
+// Components
 import Jeep from '../components/Jeep'
 
 class Page1 extends React.Component {

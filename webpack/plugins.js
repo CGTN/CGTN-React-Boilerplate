@@ -14,6 +14,8 @@ const copyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
+            // warnings: false,
+            // ie8: false,
             compress: {
                 warnings: false
             }

@@ -106,6 +106,9 @@ class MyComponent extends React.Component {
             normalScrollElements: '.fp-normal-scroll',
             touchSensitivity: 15,
             scrollingSpeed: Util.isIE() ? 1300 : 800,
+            scrollHorizontally: true,
+            loopHorizontal: false,
+            controlArrows: false,
 
             // Events
             afterLoad: (anchorLink, index)=>{
