@@ -47,14 +47,14 @@ module.exports = {
             title: 'China Minmetals Corporation',
             filename: 'index.html',
             template: path.resolve(__dirname, '../src/htmlTemplates/app.ejs'),
-            _entry: 'home.index'
+            _entry: 'home.index'  // 用于多页判断
         })
         ,new htmlWebpackPlugin({
             inject: false,
             title: 'China Minmetals Corporation',
             filename: 'about/index.html',
             template: path.resolve(__dirname, '../src/htmlTemplates/app.ejs'),
-            _entry: 'about.index'
+            _entry: 'about.index'  // 用于多页判断
         })
 
         // Automatically loaded modules when identifier is used as free variable in a module
