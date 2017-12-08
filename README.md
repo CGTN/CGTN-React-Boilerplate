@@ -50,7 +50,7 @@ new htmlWebpackPlugin({
 
 ### 三、集成的基础插件和功能插件：
 
-   1. [**jquery**](https://jquery.com/): 不多说，$ 已暴露为全局变量，可以引用jQuery插件；
+   1. [**jquery**](https://jquery.com/): $ 已暴露为全局变量，可以引用jQuery插件；
    
    2. [**jquery.html5loader**](https://github.com/GianlucaGuarini/jquery.html5loader): 传统的预加载所有图片，在展示网页之前；
    
