@@ -15,29 +15,6 @@ webpack v3.2.0
 
 1. src/ 业务文件夹目录结构：
 ```javascript
-├── fonts
-│   ├── Roboto-Thin.eot
-│   ├── Roboto-Thin.svg
-│   ├── Roboto-Thin.ttf
-│   ├── Roboto-Thin.woff
-│   ├── Roboto-Thin.woff2
-│   └── roboto-thin.styl
-├── htmlTemplates
-│   └── app.ejs
-├── images
-│   └── mobile.jpg
-├── modules
-│   ├── components
-│   ├── style
-│   └── utils
-├── pages
-│   ├── about
-│   └── home
-└── vendor
-    └── SplitText.min.js
-
-11 directories, 9 files
-bogon:Web-React-Template Nokey$ tree -L 3 ./src
 ./src
 ├── fonts
 │   └── roboto-thin.styl
