@@ -1,23 +1,5 @@
 # React 多页应用模版
 
-## Update Roadmap:
-
-### 8 Dec, 2017:
-
-1. `F`: 修复多页面打包时引入其他 css、js 资源文件问题；
-
-### 1 Nov, 2017:
-
-1. `A:` 添加 Fullpage 配置代码；
-2. `A:` 添加响应式媒体查询阀值；
-
-### 23 Oct, 2017:
-
-1. `U:` 更改图片引用方式为模块引用，不再使用copy插件；
-2. `A:` 添加*Roboto-Thin*作为基础字体（个人觉得比较好看）；
-3. `A:` 添加*Utils*功能函数模块；
-4. `A:` 添加*preload*功能组件；
-
 ## DOC:
 
 ### 一、 📦 打包方式分为生产和线上：
@@ -25,11 +7,98 @@
 ```javascript
 npm run dev
 npm run build
-```
-```javascript
+
 // 打包环境
 node v6.10.3
 webpack v3.2.0
+```
+
+1. src/ 业务文件夹目录结构：
+```javascript
+├── fonts
+│   ├── Roboto-Thin.eot
+│   ├── Roboto-Thin.svg
+│   ├── Roboto-Thin.ttf
+│   ├── Roboto-Thin.woff
+│   ├── Roboto-Thin.woff2
+│   └── roboto-thin.styl
+├── htmlTemplates
+│   └── app.ejs
+├── images
+│   └── mobile.jpg
+├── modules
+│   ├── components
+│   ├── style
+│   └── utils
+├── pages
+│   ├── about
+│   └── home
+└── vendor
+    └── SplitText.min.js
+
+11 directories, 9 files
+bogon:Web-React-Template Nokey$ tree -L 3 ./src
+./src
+├── fonts
+│   └── roboto-thin.styl
+│
+├── htmlTemplates
+│   └── app.ejs
+├── images
+│   └── mobile.jpg
+├── modules            // 通用模块组件（js&css）
+│   ├── components
+│   │   ├── Loading.js
+│   │   └── loading.styl
+│   ├── style
+│   │   ├── nk-player.styl
+│   │   └── reset.styl
+│   └── utils
+│       └── index.js
+├── pages              // 采用DDD（domain drive design）组织结构方式
+│   ├── about
+│   │   ├── css.styl
+│   │   └── index.js
+│   └── home
+│       ├── Page1.js
+│       ├── Page2.js
+│       ├── css.styl
+│       └── index.js
+└── vendor
+    └── SplitText.min.js
+```
+
+2. webpack/ 打包配置目录：
+```javascript
+├── entry.js    // 配置js入口文件
+├── loaders.js
+├── plugins.js  // 新建html页面需要配置 htmlWebpackPlugin
+└── resolve.js
+```
+
+3. config.js 文件：
+```javascript
+// webpack发布路径，以及其他一些分享信息，统一配置
+{
+    // Deploy
+    public_path: 'webpack发布路径'
+
+    // multi-pages
+    ,page1:{   // 你我新时代
+        title: '标题'
+        ,desc: '描述'
+        ,image: '预览图'
+        ,url: 'html页面完整url'
+        ,thumb: '微信分享方图'
+    }
+    ,page2:{
+        title: ''
+        ,desc: ''
+        ,image: ''
+        ,url: ''
+        ,thumb: ''
+    }
+}
 ```
 
 ### 二、 📃 多个 HTML 文件可能由单个 ejs 产出，配置文件里需要提供 _entry(每个入口文件的名字) 参数：

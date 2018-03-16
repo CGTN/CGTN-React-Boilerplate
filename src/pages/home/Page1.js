@@ -9,9 +9,9 @@
 // Plugins
 import { TimelineLite } from 'gsap'
 import SplitText from 'split-text'
+import styles from './css.styl'
 
 // Components
-import Jeep from '../components/Jeep'
 
 class Page1 extends React.Component {
     constructor(props) {
@@ -51,12 +51,15 @@ class Page1 extends React.Component {
 
     render() {
         return (
-            <section className="page1 bg-cover component fullpage-slide preload-img" 
+            <section 
+                className={[
+                    'fullpage-slide',
+                    styles.page1,
+                    styles['bg-cover']
+                ].join(' ')}
                 data-id="page1">
 
                 <img src={require('../../images/mobile.jpg')} alt="Me"/>
-
-                <Jeep />
 
             </section>
         );

@@ -5,11 +5,12 @@
  */
 'use strict';
 
-const path = require('path');
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const htmlWebpackPlugin = require('html-webpack-plugin');
-const copyWebpackPlugin = require('copy-webpack-plugin');
+const config = require('../config')
+const path = require('path')
+const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const htmlWebpackPlugin = require('html-webpack-plugin')
+const copyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     plugins: [
@@ -44,17 +45,17 @@ module.exports = {
         // Generate HTML file to 'output' folder, each of html need a plugin
         ,new htmlWebpackPlugin({
             inject: false,
-            title: 'China Minmetals Corporation',
             filename: 'index.html',
             template: path.resolve(__dirname, '../src/htmlTemplates/app.ejs'),
-            _entry: 'home.index'  // 用于多页判断
+            _entry: 'home.index',  // 用于多页判断
+            page: config.page1
         })
         ,new htmlWebpackPlugin({
             inject: false,
-            title: 'China Minmetals Corporation',
             filename: 'about/index.html',
             template: path.resolve(__dirname, '../src/htmlTemplates/app.ejs'),
-            _entry: 'about.index'  // 用于多页判断
+            _entry: 'about.index',  // 用于多页判断
+            page: config.page2
         })
 
         // Automatically loaded modules when identifier is used as free variable in a module
@@ -70,11 +71,11 @@ module.exports = {
         })
 
         // Copy static files to 'config.output' folder
-        // ,new copyWebpackPlugin([
-        //     {
-        //         from: 'src/images',
-        //         to: 'images'
-        //     }
-        // ])
+        ,new copyWebpackPlugin([
+            {
+                from: 'favicon.png',
+                to: ''
+            }
+        ])
     ]
 }

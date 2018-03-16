@@ -43,7 +43,15 @@ module.exports = {
             test: /\.css$/,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
-                use: 'css-loader'
+                use: [
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            localIdentName: '[name]__[local]-[hash:base64:5]'
+                        }
+                    }
+                ]
             })
         },
 
@@ -51,7 +59,16 @@ module.exports = {
             test: /\.styl$/,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
-                use: 'css-loader!stylus-loader'
+                use: [
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            localIdentName: '[name]__[local]-[hash:base64:5]'
+                        }
+                    },
+                    'stylus-loader'
+                ]
             })
         }
     ]

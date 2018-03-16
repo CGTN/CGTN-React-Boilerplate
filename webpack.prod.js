@@ -6,21 +6,22 @@
  */
 'use strict';
 
-const webpack = require('webpack');
-const path = require('path');
+const webpack = require('webpack')
+const path = require('path')
+const config = require('./config')
 
 /**
  * Common config that can be used in dev & prod environment
  */
-const ENTRY = require('./webpack/entry');
-const LOADERS = require('./webpack/loaders').loaders;
-const PLUGINS = require('./webpack/plugins').plugins;
-const RESOLVE = require('./webpack/resolve');
+const ENTRY = require('./webpack/entry')
+const LOADERS = require('./webpack/loaders').loaders
+const PLUGINS = require('./webpack/plugins').plugins
+const RESOLVE = require('./webpack/resolve')
 
 /**
  * Config
  */
-const PUBLIC_PATH = '/home';
+const PUBLIC_PATH = config.public_path
 
 module.exports = {
     // dectool should be false if env is production!!!

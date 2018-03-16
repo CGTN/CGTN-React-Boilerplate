@@ -15,11 +15,11 @@ import Util from 'utils'
 
 // Style
 import '../../fonts/roboto-thin.styl'
-import '../../styles/home.styl'
+import styles from './css.styl'
 
 // Pages
-import Page1 from '../../modules/home/Page1'
-import Page2 from '../../modules/home/Page2'
+import Page1 from './Page1'
+import Page2 from './Page2'
 
 class MyComponent extends React.Component {
     constructor(props) {
@@ -143,7 +143,7 @@ class MyComponent extends React.Component {
     
     render() {
         return (
-            <section className="home">
+            <section className={styles.home}>
                 {/* Full Page */}
                 <div id="fullpage">
                     {/* Story 1 */}

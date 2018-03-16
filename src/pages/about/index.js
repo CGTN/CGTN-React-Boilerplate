@@ -2,16 +2,16 @@
  * @Author: Mr.B 
  * @Date: 2017-12-08 13:36:43 
  * @Last Modified by: Mr.B
- * @Last Modified time: 2017-12-08 13:37:54
+ * @Last Modified time: 2018-03-16 15:17:35
  */
 'use strict'; 
 
-import '../../styles/about.styl'
+import styles from './css'
 
-class About extends Component {
+class About extends React.Component {
     render() {
         return (
-            <div>
+            <div className={styles['about-page']}>
                 About...
             </div>
         );
