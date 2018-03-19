@@ -23,7 +23,7 @@ webpack v3.2.0
 │   └── app.ejs
 ├── images
 │   └── mobile.jpg
-├── modules            // 通用模块组件（js&css）
+├── modules            // 通用模块组件（js&css module）
 │   ├── components
 │   │   ├── Loading.js
 │   │   └── loading.styl
