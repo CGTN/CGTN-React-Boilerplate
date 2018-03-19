@@ -1,6 +1,6 @@
 {
   "name": "web-react-template",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "",
   "dependencies": {
     "fullpage.js": "^2.9.4",
