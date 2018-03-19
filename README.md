@@ -36,7 +36,7 @@ webpack v3.2.0
 │   ├── about
 │   │   ├── css.styl
 │   │   └── index.js
-│   └── home
+│   └── home           // 业务组件都放在同一路由文件夹
 │       ├── Page1.js
 │       ├── Page2.js
 │       ├── css.styl
