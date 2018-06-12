@@ -1,14 +1,16 @@
 /*
  * @Author: Nokey
  * @Date: 2017-02-24 14:16:31
- * @Last Modified by: Nokey
- * @Last Modified time: 2017-09-02 20:45:03
+ * @Last Modified by: Mr.B
+ * @Last Modified time: 2018-06-08 18:54:54
  */
 'use strict';
 
 const webpack = require('webpack')
 const path = require('path')
 const config = require('./config')
+const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const poststylus = require('poststylus')
 
 /**
  * Common config that can be used in dev & prod environment
@@ -73,6 +75,42 @@ module.exports = {
                         }
                     }
                 ]
+            },
+
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader'
+                        }
+                    ]
+                })
+            },
+    
+            {
+                test: /\.styl$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                modules: true,
+                                localIdentName: '[local]__[hash:base64:10]'
+                            }
+                        },
+                        {
+                            loader: 'stylus-loader',
+                            options: {
+                                use: [
+                                    poststylus([ 'autoprefixer', 'rucksack-css' ])
+                                ]
+                            }
+                        }
+                    ]
+                })
             }
         ])
     },

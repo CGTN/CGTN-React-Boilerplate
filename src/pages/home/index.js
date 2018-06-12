@@ -1,8 +1,8 @@
 /*
  * @Author: Nokey 
  * @Date: 2017-07-13 18:03:17 
- * @Last Modified by: Nokey
- * @Last Modified time: 2017-10-24 14:42:32
+ * @Last Modified by: Mr.B
+ * @Last Modified time: 2018-06-08 18:24:12
  */
 'use strict';
 
@@ -14,8 +14,11 @@ import { TimelineLite } from 'gsap'
 import Util from 'utils'
 
 // Style
-import '../../fonts/roboto-thin.styl'
-import styles from './css.styl'
+import 'roboto-thin.styl'
+import 'style/reset.styl'
+import classNames from 'classnames/bind'
+import styles from './index-css'
+let _s = classNames.bind(styles)
 
 // Pages
 import Page1 from './Page1'
@@ -143,7 +146,7 @@ class MyComponent extends React.Component {
     
     render() {
         return (
-            <section className={styles.home}>
+            <section className={_s('home')}>
                 {/* Full Page */}
                 <div id="fullpage">
                     {/* Story 1 */}

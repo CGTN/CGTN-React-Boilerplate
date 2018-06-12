@@ -1,15 +1,19 @@
 /*
  * @Author: Nokey 
  * @Date: 2017-08-16 15:01:10 
- * @Last Modified by: Nokey
- * @Last Modified time: 2017-10-12 16:04:13
+ * @Last Modified by: Mr.B
+ * @Last Modified time: 2018-06-08 19:04:21
  */
 'use strict'; 
 
 // Plugins
 import { TimelineLite } from 'gsap'
 import SplitText from 'split-text'
-import styles from './css.styl'
+
+// Style
+import classNames from 'classnames/bind'
+import styles from './page1-css'
+let _s = classNames.bind(styles)
 
 // Components
 
@@ -52,11 +56,7 @@ class Page1 extends React.Component {
     render() {
         return (
             <section 
-                className={[
-                    'fullpage-slide',
-                    styles.page1,
-                    styles['bg-cover']
-                ].join(' ')}
+                className={_s('page1', 'bg-cover') + ' fullpage-slide'}
                 data-id="page1">
 
                 <img src={require('../../images/mobile.jpg')} alt="Me"/>

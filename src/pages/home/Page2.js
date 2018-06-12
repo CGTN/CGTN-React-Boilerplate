@@ -7,6 +7,10 @@
 'use strict';
 
 import { TimelineLite } from 'gsap'
+// Style
+import classNames from 'classnames/bind'
+import styles from './page2-css'
+let _s = classNames.bind(styles)
 
 class Page2 extends React.Component {
     constructor(props) {
@@ -62,7 +66,8 @@ class Page2 extends React.Component {
 
     render() {
         return (
-            <section className="page2 bg-cover component fullpage-slide preload-img" 
+            <section 
+                className={_s('page2', 'bg-cover', 'component') + ' fullpage-slide preload-img'}
                 data-id="page2">
 
                 <h1>Page2</h1>

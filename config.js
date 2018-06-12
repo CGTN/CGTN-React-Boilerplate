@@ -10,6 +10,7 @@ module.exports = {
     // Deploy
     public_path: '/home'
     ,port: 8989
+    ,plugin_url: ''
 
     // multi-pages
     ,page1:{ // 你我新时代

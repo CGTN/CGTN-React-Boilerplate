@@ -6,7 +6,10 @@
  */
 'use strict'; 
 
-import styles from './css'
+// Style
+import classNames from 'classnames/bind'
+import styles from './index-css'
+let _s = classNames.bind(styles)
 
 class About extends React.Component {
     render() {

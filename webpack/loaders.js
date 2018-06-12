@@ -6,7 +6,6 @@
 'use strict';
 
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     loaders: [
@@ -44,39 +43,6 @@ module.exports = {
                     query: '$'
                 }
             ]
-        },
-
-        {
-            test: /\.css$/,
-            use: ExtractTextPlugin.extract({
-                fallback: 'style-loader',
-                use: [
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true,
-                            localIdentName: '[name]__[local]-[hash:base64:5]'
-                        }
-                    }
-                ]
-            })
-        },
-
-        {
-            test: /\.styl$/,
-            use: ExtractTextPlugin.extract({
-                fallback: 'style-loader',
-                use: [
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true,
-                            localIdentName: '[name]__[local]-[hash:base64:5]'
-                        }
-                    },
-                    'stylus-loader'
-                ]
-            })
         }
     ]
 }

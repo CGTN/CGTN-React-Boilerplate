@@ -6,6 +6,8 @@
  */
 'use strict';
 
+import config from '../../../config'
+
 class Util {
     isIE() {
         let ua = window.navigator.userAgent,
@@ -60,6 +62,76 @@ class Util {
             });
 
         });
+    }
+
+    /**
+     * JWplayer
+     */
+    setJWplayer(dom, data, opt){
+        opt = opt || {}
+
+        try {
+            jwplayer(dom).setup({
+                file: data.video,
+                image: data.poster,
+                skin: {
+                    name: 'nk-player'
+                },
+                stretching: 'fill',
+                width: '100%',
+                aspectratio: opt.ratio || '16:9',
+                androidhls: true,
+                primary: 'html5',
+                autostart: false,
+                hlshtml: true,
+                base: config.plugin_url + '/plugins/jwplayer-7.12.11',
+                flashplayer: config.plugin_url + '/plugins/jwplayer-7.12.11/jwplayer.flash.swf'
+            }).on('setupError', (e)=>{
+                console.log('Setup Error...', e)
+            }).on('play', ()=>{
+                console.log('video play')
+            });
+        } catch(error){
+            console.error('Setup JWplayer: ' + error)
+        }
+
+        return dom
+    }
+
+    removeJWplayer(dom){
+        try {
+            jwplayer(dom).remove()
+        } catch (error) {
+            console.error('Remove JWplayer: ' + error)
+        }
+    }
+
+    /**
+     * determine whether browser can 
+     * play 360 video or not
+     */
+    isCanPlay360(){
+        // TODO: Latest Chrome, Firefox & Edge desktop (CFE)
+        let _me = this,
+            _ua = window.navigator.userAgent.toLowerCase(),
+            _isMobile = /mobile|android|kindle|silk|midp|phone|(windows .+arm|touch)/.test(_ua),
+            _isIOS = /iphone|ipad/.test(_ua),
+            _isChrome = /chrome/.test(_ua),
+            _isCFE = /firefox|edge|chrome/.test(_ua)
+
+        // if(_isMobile){
+        //     return _isIOS || _isChrome
+        // }else{
+        //     return _isCFE
+        // }
+        return !_isMobile && _isCFE
+    }
+
+    /**
+     * Get element background-image's URL
+     */
+    getBGImage(e){
+        return $(e).css('backgroundImage').match(/http.+[jpg|png|svg|jpeg]/i)[0]
     }
 }
 
