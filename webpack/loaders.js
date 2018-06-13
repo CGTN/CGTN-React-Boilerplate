@@ -14,7 +14,8 @@ module.exports = {
             /*exclude: /umeditor/,*/
             include: [
                 path.resolve(__dirname, '../src/pages'),
-                path.resolve(__dirname, '../src/modules')
+                path.resolve(__dirname, '../src/modules'),
+                path.resolve(__dirname, '../node_modules/gsap')
             ],
             loader: 'babel-loader',
             query: {

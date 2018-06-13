@@ -11,17 +11,14 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const copyWebpackPlugin = require('copy-webpack-plugin')
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
     plugins: [
-        new UglifyJSPlugin({
-            uglifyOptions:{
-                // warnings: false,
-                // ie8: false,
-                compress: {
-                    warnings: false
-                }
+        new webpack.optimize.UglifyJsPlugin({
+            // warnings: false,
+            // ie8: false,
+            compress: {
+                warnings: false
             }
         })
 
