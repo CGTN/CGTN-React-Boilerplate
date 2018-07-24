@@ -43,7 +43,8 @@
     "start": "webpack-dev-server --env=dev --inline --progress",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --env=dev --inline --progress",
-    "build": "rm -rf build/* && webpack --env=prod --progress --colors --display-error-details"
+    "build": "rm -rf build/* && webpack --env=prod --progress --colors --display-error-details",
+    "deploy-test": "node ./bash/deploy.js"
   },
   "keywords": [
     "react",
