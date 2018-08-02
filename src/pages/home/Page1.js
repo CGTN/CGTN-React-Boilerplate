@@ -59,7 +59,7 @@ class Page1 extends React.Component {
                 className={_s('page1', 'bg-cover') + ' fullpage-slide'}
                 data-id="page1">
 
-                <img src={require('../../images/mobile.jpg')} alt="Me"/>
+                <img src={require('./img/home-bg.jpg')} alt="Me"/>
 
             </section>
         );
