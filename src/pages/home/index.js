@@ -14,6 +14,7 @@ import { TimelineLite } from 'gsap'
 import Util from 'utils'
 
 // Style
+import 'font-awesome.css'
 import 'roboto-thin.styl'
 import 'style/reset.styl'
 import classNames from 'classnames/bind'

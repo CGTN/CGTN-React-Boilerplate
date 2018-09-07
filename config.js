@@ -9,7 +9,7 @@
 module.exports = {
     // Deploy
     public_path: '/home'
-    ,port: 8989
+    ,port: 9000
     ,plugin_url: ''
 
     // multi-pages
